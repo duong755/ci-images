@@ -18,4 +18,4 @@ jobs:
         DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       run: |
         echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
-        docker push ngoquangduong/node-aws:slim
+        docker push ngoquangduong/node-aws:latest
