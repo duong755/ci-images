@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 touch ~/.bashrc
 touch ~/.bash_profile

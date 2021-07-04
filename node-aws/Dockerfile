@@ -1,11 +1,11 @@
-FROM amazon/aws-cli:latest
+FROM ubuntu:latest
 
-RUN yum install -q -y wget tar gzip
+RUN apt-get update -y && apt-get install -y apt-transport-https curl tar gzip unzip
 
-COPY ./install-node.sh ./install-node.sh
+COPY *.sh .
 
 RUN chmod +x ./install-node.sh && ./install-node.sh
 
-RUN yum remove -q -y wget tar gzip
+RUN chmod +x ./install-aws-cli-v2.sh && ./install-aws-cli-v2.sh
 
-ENTRYPOINT ["/bin/sh", "-c"]
+
