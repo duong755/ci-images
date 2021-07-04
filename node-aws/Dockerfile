@@ -1,11 +1,12 @@
-FROM node:slim
+FROM amazon/aws-cli:latest
 
-RUN apt-get update -y && apt-get install -y curl unzip
+RUN yum install -q -y wget tar gzip
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-  unzip -q awscliv2.zip && \
-  ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
+COPY ./install-node.sh ./install-node.sh
 
-RUN apt-get remove --purge --yes curl unzip
+RUN chmod +x ./install-node.sh && ./install-node.sh
+
+RUN yum remove -q -y wget tar gzip
 
 ENTRYPOINT tail -f /dev/null
+CMD ["yarn"]
