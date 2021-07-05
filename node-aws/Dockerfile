@@ -2,7 +2,9 @@ FROM ubuntu:latest
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN apt-get install -y apt-transport-https wget tar gzip unzip
+RUN apt-get install --no-install-recommends -y \
+  ca-certificates apt-transport-https wget tar gzip unzip \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY *.sh ./
 
