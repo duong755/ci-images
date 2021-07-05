@@ -5,7 +5,7 @@ touch ~/.bash_profile
 touch ~/.profile
 
 NVM_VERSION=$(wget -qO- https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep -Po -m 1 '(v\d+\.\d+\.\d+)(?!name)')
-curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" | bash
+wget -qO- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" | bash
 
 . ~/.nvm/nvm.sh
 nvm install --lts --default
