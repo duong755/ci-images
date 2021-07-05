@@ -6,6 +6,8 @@ on:
     paths:
       - node-aws/*
       - .github/workflows/node-aws.yml
+  schedule:
+    - cron: '0 7 1,15 * *'
 
 jobs:
   build-and-push-image:
