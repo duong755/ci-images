@@ -6,4 +6,4 @@ unzip -qq awscliv2.zip
 
 rm -f awscliv2.zip
 
-./aws/install -i /usr/local/bin -b /usr/bin
+./aws/install -i /usr/local/bin -b /usr/bin && rm -rf aws
