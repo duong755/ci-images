@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+RUN apt-get install -y software-properties-common
+
 RUN add-apt-repository -y ppa:ondrej/php ppa:git-core/ppa
 
 RUN apt-get update -y && apt-get upgrade -y
