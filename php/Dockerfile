@@ -5,7 +5,7 @@ RUN add-apt-repository -y ppa:ondrej/php ppa:git-core/ppa
 RUN apt-get update -y && apt-get upgrade -y
 
 RUN apt-get install -y \
-  git
+  git \
   php7.3 \
   php7.3-common \
   php7.3-mysql \
