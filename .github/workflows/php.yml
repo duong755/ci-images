@@ -1,0 +1,24 @@
+name: ngoquangduong/php
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - php/*
+      - .github/workflows/php.yml
+  schedule:
+    - cron: '0 7 2,16 * *'
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build php --file php/Dockerfile --tag ngoquangduong/php:latest
+    - name: Publish the Docker image
+      env:
+        DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      run: |
+        echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
+        docker push ngoquangduong/php:latest
