@@ -1,8 +1,12 @@
 FROM ubuntu:latest
 
+RUN apt-get update -y
+
 RUN apt-get install -y software-properties-common
 
-RUN add-apt-repository -y ppa:ondrej/php ppa:git-core/ppa
+RUN add-apt-repository -y ppa:ondrej/php
+
+RUN add-apt-repository -y ppa:git-core/ppa
 
 RUN apt-get update -y && apt-get upgrade -y
 
@@ -23,7 +27,8 @@ RUN apt-get install -y \
   php7.3-opcache \
   php7.3-soap \
   php7.3-zip \
-  php7.3-intl
+  php7.3-intl && \
+  rm -rf /var/lib/apt/lists/*
 
 COPY install-composer.sh ./
 
