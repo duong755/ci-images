@@ -10,7 +10,7 @@ on:
     - cron: '0 7 3,17 * *'
 
 jobs:
-  build-and-push-image-php7.0:
+  build-and-push-image-php70:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
       run: |
         echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
         docker push ngoquangduong/php:7.0
-  build-and-push-image-php7.1:
+  build-and-push-image-php71:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
       run: |
         echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
         docker push ngoquangduong/php:7.1
-  build-and-push-image-php7.2:
+  build-and-push-image-php72:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
       run: |
         echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
         docker push ngoquangduong/php:7.2
-  build-and-push-image-php7.3:
+  build-and-push-image-php73:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -58,7 +58,7 @@ jobs:
       run: |
         echo $DOCKER_HUB_ACCESS_TOKEN | docker login --username ngoquangduong --password-stdin
         docker push ngoquangduong/php:7.3
-  build-and-push-image-php7.4:
+  build-and-push-image-php74:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
