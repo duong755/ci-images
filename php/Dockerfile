@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ARG PHP_VERSION=7.4
+
 RUN apt-get update -y
 
 RUN apt-get install -y software-properties-common
@@ -14,22 +16,22 @@ RUN apt-get install -y \
   git \
   ssh \
   rsync \
-  php7.3 \
-  php7.3-common \
-  php7.3-mysql \
-  php7.3-xml \
-  php7.3-xmlrpc \
-  php7.3-curl \
-  php7.3-gd \
-  php7.3-imagick \
-  php7.3-cli \
-  php7.3-dev \
-  php7.3-imap \
-  php7.3-mbstring \
-  php7.3-opcache \
-  php7.3-soap \
-  php7.3-zip \
-  php7.3-intl && \
+  php${PHP_VERSION} \
+  php${PHP_VERSION}-common \
+  php${PHP_VERSION}-mysql \
+  php${PHP_VERSION}-xml \
+  php${PHP_VERSION}-xmlrpc \
+  php${PHP_VERSION}-curl \
+  php${PHP_VERSION}-gd \
+  php${PHP_VERSION}-imagick \
+  php${PHP_VERSION}-cli \
+  php${PHP_VERSION}-dev \
+  php${PHP_VERSION}-imap \
+  php${PHP_VERSION}-mbstring \
+  php${PHP_VERSION}-opcache \
+  php${PHP_VERSION}-soap \
+  php${PHP_VERSION}-zip \
+  php${PHP_VERSION}-intl && \
   rm -rf /var/lib/apt/lists/*
 
 COPY install-composer.sh ./
