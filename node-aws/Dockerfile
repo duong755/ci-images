@@ -8,6 +8,6 @@ RUN apt-get install --no-install-recommends -y \
 
 COPY *.sh ./
 
-RUN chmod +x ./install-node.sh && ./install-node.sh
+RUN chmod +x ./install-node.sh && ./install-node.sh && rm -f ./install-node.sh
 
-RUN chmod +x ./install-aws-cli-v2.sh && ./install-aws-cli-v2.sh
+RUN chmod +x ./install-aws-cli-v2.sh && ./install-aws-cli-v2.sh && rm -f ./install-aws-cli-v2.sh
