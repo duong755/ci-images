@@ -8,4 +8,4 @@ RUN apt-get install --no-install-recommends -y \
 
 COPY *.sh ./
 
-RUN chmod +x ./install-node.sh && ./install-node.sh
+RUN chmod +x ./install-node.sh && ./install-node.sh && rm -f ./install-node.sh

@@ -36,4 +36,4 @@ RUN apt-get install -y \
 
 COPY install-composer.sh ./
 
-RUN chmod +x install-composer.sh && ./install-composer.sh
+RUN chmod +x install-composer.sh && ./install-composer.sh && rm -f ./install-composer.sh
